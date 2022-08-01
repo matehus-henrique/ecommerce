@@ -2,18 +2,20 @@
 
 require_once("vendor/autoload.php");
 
-$app = new \Slim\Slim();
+use \Slim\Slim;
+use \Hcode\page;
+
+$app = new Slim();
 
 $app->config('debug', true);
 
 $app->get('/', function() {
     
-    echo "ola";
+      $page = new Page();
 
-	$sql = new \Hcode\DB\sql();
-	$results = $sql->select("SELECT * FROM ");
-	echo json_encode($results);
-	print_r($results);
+    $page->setTpl("index");
+
+   
 
 });
 
