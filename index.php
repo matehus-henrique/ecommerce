@@ -8,7 +8,12 @@ $app->config('debug', true);
 
 $app->get('/', function() {
     
-	echo "OK";
+    echo "ola";
+
+	$sql = new \Hcode\DB\sql();
+	$results = $sql->select("SELECT * FROM ");
+	echo json_encode($results);
+	print_r($results);
 
 });
 
